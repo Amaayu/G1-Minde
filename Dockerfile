@@ -5,4 +5,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/G1-Minde-0.0.1-SNAPSHOT.jar G1-Minde.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","Hook4Startup.jar"]
+ENTRYPOINT ["java","-jar","G1-Minde.jar"]
