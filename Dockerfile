@@ -1,25 +1,8 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-alpine
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy Maven wrapper and pom.xml
-COPY ./mvnw ./mvnw
-COPY .mvn .mvn
-COPY pom.xml .
-
-# Download dependencies
-RUN ./mvnw dependency:go-offline
-
-# Copy the project source
+FROM maven:3.8.5-openjdk-17 AS build
 COPY . .
+RUN mvn clean package -DskipTests
 
-# Package the application
-RUN ./mvnw package
-
-# Expose the port the app runs on
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/G1-Minde-0.0.1-SNAPSHOT.jar G1-Minde.jar
 EXPOSE 8080
-
-# Run the application
-CMD ["java", "-jar", "target/your-application-name.jar"]
+ENTRYPOINT ["java","-jar","Hook4Startup.jar"]
