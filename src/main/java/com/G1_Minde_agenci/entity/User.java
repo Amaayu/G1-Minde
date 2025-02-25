@@ -26,5 +26,7 @@ public class User {
     private String password;
     @NonNull
     private  String email;
+    // "ROLE_USER,ROLE_ADMIN"
+    private String roles = "User_Role";
 
 }
