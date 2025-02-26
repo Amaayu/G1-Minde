@@ -78,7 +78,7 @@ public class SpringSecurity {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://g1-minde.netlify.app","http://127.0.0.1:5501")); // Allowed origin for frontend
+        configuration.setAllowedOrigins(List.of("https://g1-minde.netlify.app","http://127.0.0.1:5501","128.199.195.156")); // Allowed origin for frontend
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow specific HTTP methods
         configuration.setAllowedHeaders(List.of("*")); // Allow all headers
         configuration.setAllowCredentials(true);
