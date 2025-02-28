@@ -75,16 +75,75 @@ public class SpringSecurity {
     /**
      * CORS Configuration Source
      */
+
+   // @Bean
+   // public CorsConfigurationSource corsConfigurationSource() {
+    //    CorsConfiguration configuration = new CorsConfiguration();
+    //    configuration.setAllowedOrigins(List.of("https://g1-minde.netlify.app","http://127.0.0.1:5501" )); // Allowed origin for frontend
+    //    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow specific HTTP methods
+    //    configuration.setAllowedHeaders(List.of("*")); // Allow all headers
+   //     configuration.setAllowCredentials(true);
+
+     //   UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    //    source.registerCorsConfiguration("/**", configuration);
+     //   return source;
+   // }
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://g1-minde.netlify.app","http://127.0.0.1:5501","128.199.195.156")); // Allowed origin for frontend
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow specific HTTP methods
-        configuration.setAllowedHeaders(List.of("*")); // Allow all headers
+        configuration.setAllowedOrigins(List.of(
+                "https://g1-minde.netlify.app",
+                "http://127.0.0.1:5501",
+                "128.199.195.156",
+                "216.144.250.150",
+                "69.162.124.226",
+                "69.162.124.227",
+                "69.162.124.228",
+                "69.162.124.229",
+                "69.162.124.230",
+                "69.162.124.231",
+                "69.162.124.232",
+                "69.162.124.233",
+                "69.162.124.234",
+                "69.162.124.235",
+                "69.162.124.236",
+                "69.162.124.237",
+                "69.162.124.238",
+                "63.143.42.242",
+                "63.143.42.243",
+                "63.143.42.244",
+                "63.143.42.245",
+                "63.143.42.246",
+                "63.143.42.247",
+                "63.143.42.248",
+                "63.143.42.249",
+                "63.143.42.250",
+                "63.143.42.251",
+                "63.143.42.252",
+                "63.143.42.253",
+                "216.245.221.82",
+                "216.245.221.83",
+                "216.245.221.84",
+                "216.245.221.85",
+                "216.245.221.86",
+                "216.245.221.87",
+                "216.245.221.88",
+                "216.245.221.89",
+                "216.245.221.90",
+                "216.245.221.91",
+                "216.245.221.92",
+                "216.245.221.93"
+                // Tumhe yeh list puri karni padegi, sabhi Uptime Robot IPs ke saath
+        ));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+
 }
