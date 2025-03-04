@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: USER-SERVICE
+
+  # MongoDB Atlas configuration
+  data:
+    mongodb:
+      uri: mongodb+srv://namdevaniket446:Xoq0Cfsbu8yxPHs8@users.1fgfy.mongodb.net/?retryWrites=true&w=majority&appName=
+      database: G1_Minde
+      auto-index-creation: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
